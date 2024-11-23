@@ -1,0 +1,36 @@
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Viewer</title>
+</head>
+<body>
+    <h1><a href="/">Home</a></h1>
+    <h3>Current Directory: {{ current_directory }}</h3>
+
+    <h4>Directories</h4>
+    <ul>
+        {% for x in directories %}
+            <li><a href="{% url 'click' x %}">{{ x }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h4>Files</h4>
+    <ul>
+        {% for x in files %}
+            <li>
+                {% if x|endswith:".png" or x|endswith:".jpg" or x|endswith:".jpeg" %}
+                    <a href="{{ MEDIA_URL }}{{ x }}" target="_blank">
+                        <img src="{{ MEDIA_URL }}{{ x }}" alt="{{ x }}" style="max-width: 200px;">
+                    </a>
+                    <p>{{x}}</p>
+                {% else %}
+                    <a href="{% url 'click' x %}">{{ x }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
