@@ -5,3 +5,5 @@ wvenv/          # Ignore the entire wvenv directory
 # Ignore specific files
 lin_requirements.txt  # Ignore lin_requirements.txt at the root
 win_requirements.txt  # Ignore lin_requirements.txt at the root
+/lvenv
+/wvenv
