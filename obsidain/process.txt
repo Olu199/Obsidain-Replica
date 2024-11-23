@@ -1,0 +1,3 @@
+login and credential 
+add or click on existing directory 
+send selected directory to click 
