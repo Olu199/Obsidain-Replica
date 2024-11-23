@@ -1,6 +1,5 @@
 # Ignore Python virtual environments
-lvenv/         # Ignore the entire lvenv directory
-wvenv/          # Ignore the entire wvenv directory
+
 
 # Ignore specific files
 lin_requirements.txt  # Ignore lin_requirements.txt at the root
